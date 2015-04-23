@@ -1,0 +1,40 @@
+// Stencil Icon
+// ===
+//
+// An SVG icon component
+
+
+// Configurable variables
+// ---
+
+$icon__size: 2.5rem !default;
+$icon__small-size: 1rem !default;
+
+
+// Dependencies
+// ---
+//
+
+@import 'stencil-variables/src/style';
+@import 'level/level';
+
+
+// Icon
+// ---
+
+.c-icon {
+    display: inline-block;
+    color: inherit;
+    fill: currentColor;
+    width: $icon__size;
+    height: $icon__size;
+}
+
+.c-icon.c--block {
+    display: block;
+}
+
+.c-icon.c--small {
+    width: $icon__small-size;
+    height: $icon__small-size;
+}

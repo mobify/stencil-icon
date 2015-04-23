@@ -1,0 +1,46 @@
+<style>
+    /* Test-specific fixture styles go here. */
+</style>
+
+<svg display="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <symbol id="icon-account" viewBox="0 0 1024 1024">
+        	<title>account</title>
+        	<path class="path1" d="M832 819.2c0 8-6.4 12.8-12.8 12.8h-614.4c-8 0-12.8-6.4-12.8-12.8v-27.2c0-132.8 240-107.2 240-212.8 0 0-80-80-80-227.2 0-88 72-160 160-160s160 72 160 160c0 147.2-80 227.2-80 227.2 0 107.2 240 80 240 212.8v27.2z"></path>
+        </symbol>
+        <symbol id="icon-search" viewBox="0 0 1024 1024">
+        	<title>search</title>
+        	<path class="path1" d="M832 432c0 132.8-107.2 240-240 240-48 0-91.2-12.8-128-36.8l-180.8 180.8c-9.6 9.6-24 16-38.4 16s-27.2-4.8-38.4-16c-20.8-20.8-20.8-54.4 0-75.2l182.4-180.8c-24-36.8-36.8-80-36.8-128 0-132.8 107.2-240 240-240s240 107.2 240 240zM752 432c0-88-72-160-160-160s-160 72-160 160c0 88 72 160 160 160s160-72 160-160z"></path>
+        </symbol>
+        <symbol id="icon-cart" viewBox="0 0 1024 1024">
+        	<title>cart</title>
+        	<path class="path1" d="M803.2 654.4c-4.8 22.4-24 36.8-46.4 36.8h-392c-22.4 0-43.2-16-46.4-36.8l-99.2-403.2h-49.6c-27.2 0-49.6-22.4-49.6-49.6s22.4-49.6 49.6-49.6h86.4c22.4 0 43.2 16 48 36.8l27.2 110.4h556.8c4.8 0 9.6 3.2 12.8 6.4s4.8 9.6 3.2 14.4l-100.8 334.4zM430.4 772.8c44.8 0 81.6 36.8 81.6 81.6s-36.8 81.6-81.6 81.6c-44.8 0-81.6-36.8-81.6-81.6s36.8-81.6 81.6-81.6zM691.2 772.8c44.8 0 81.6 36.8 81.6 81.6s-36.8 81.6-81.6 81.6-81.6-36.8-81.6-81.6c0-44.8 36.8-81.6 81.6-81.6z"></path>
+        </symbol>
+    </defs>
+</svg>
+
+{@c-spec for="Icon" repository=repo}
+    {@c-spec__test describe=".c-icon"}
+
+        {@c-spec__case expect="It should render an icon."}
+            {@c-icon iconName="account" iconTitle="account" /}
+        {/c-spec__case}
+
+        {@c-spec__case expect="Icons are inline by default."}
+            {@c-icon iconName="account" iconTitle="account" /}
+            {@c-icon iconName="search" iconTitle="search" /}
+            {@c-icon iconName="cart" iconTitle="cart" /}
+        {/c-spec__case}
+
+        {@c-spec__case expect="Icons can optionally be rendered as block level elements."}
+            {@c-icon iconName="account" iconTitle="account" class="c--block" /}
+            {@c-icon iconName="search" iconTitle="search" class="c--block" /}
+            {@c-icon iconName="cart" iconTitle="cart" class="c--block" /}
+        {/c-spec__case}
+
+        {@c-spec__case expect="It supports multiple icon sizes."}
+            {@c-icon iconName="account" iconTitle="account" class="c--small" /}
+        {/c-spec__case}
+
+    {/c-spec__test}
+{/c-spec}

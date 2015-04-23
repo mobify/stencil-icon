@@ -1,0 +1,4 @@
+<svg class="c-icon {class}">
+    <title>{iconTitle}</title>
+    <use xlink:href="#icon-{iconName}"></use>
+</svg>
