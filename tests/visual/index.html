@@ -6,14 +6,29 @@
 
     <title>Icon Component Tests · Stencil</title>
 
-    <link rel="stylesheet" href="../../tmp/icon.css">
+    <!-- @TODO This should be a separate component as a devDependency -->
+    <link rel="stylesheet" href="https://mobify.github.io/stencil/fixtures/fixture.css">
 
-    <script src="../../bower_components/requirejs/require.js"></script>
-    <script src="config.js"></script>
-    <script>
-        require(['runner']);
-    </script>
+    <link rel="stylesheet" href="icon.css">
+    <style>
+        /* Test-specific fixture styles go here. */
+    </style>
 </head>
-<body>
+<body class="c-fixture-body">
+    <h1 class="c-fixture-title">
+        <a class="c-fixture-title__sub" href="https://github.com/mobify/stencil">Stencil</a>
+        <div>Stencil Icon Component Tests</div>
+    </h1>
+
+    <article class="c-test">
+        <h2 class="c-test__describe">.c-icon</h2>
+
+        <div class="c-test__case">
+            <p class="c-test__should">Describe the test case here.</p>
+            <div class="c-test__run">
+                Write your test markup here.
+            </div>
+        </div>
+    </article>
 </body>
 </html>

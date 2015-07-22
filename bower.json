@@ -28,15 +28,6 @@
     "Gruntfile.js",
     "tests"
   ],
-    "dependencies": {
-    "level": "mobify/level#~0.0.1",
-    "stencil-variables": "ry5n/stencil-variables",
-    "dustjs-component": "mobify/dustjs-helper-component#adaptive-compat",
-    "spline": "~1.0.1"
-  },
-    "devDependencies": {
-    "stencil-spec": "ry5n/stencil-spec#dust",
-    "requirejs": "^2.1.0",
-    "text": "^2.0.0"
-    }
+  "dependencies": {},
+  "devDependencies": {}
 }
