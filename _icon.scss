@@ -1,0 +1,30 @@
+// icon
+// ===
+
+// Configurable Variables
+// ---
+
+$icon__variable-name: true !default;
+
+
+// Dependencies
+// ---
+
+@import 'stencil-variables/variables';
+@import 'level/level';
+
+
+// Icon root
+// ---
+
+.c-icon {
+    // Your component styles go here
+}
+
+
+// Icon sub-component
+// ---
+
+.c-icon__sub-component {
+    // Your component styles go here
+}

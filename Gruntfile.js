@@ -5,21 +5,35 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        clean: ['tmp'],
+
+        stencil_dust: {
+            options: {
+                dust: require('dustjs-linkedin')
+            },
+            templates: {
+                src: [
+                    '*.dust',
+                    'bower_components/stencil-*/**/*.dust',
+                    'tests/**/*.dust'
+                ],
+                dest: 'tmp/templates.js'
+            }
+        },
+
         sass: {
             options: {
                 style: 'expanded',
+                sourcemap: 'none',
                 loadPath: [
                     './',
                     './bower_components',
-                ]
+                ],
+                require: ['compass/import-once/activate']
             },
             compile_tests: {
-                files: [{
-                    expand: true,
-                    src: 'tests/**/*.scss',
-                    dest: '.',
-                    ext: '.css'
-                }]
+                src: 'tests/visual/test.scss',
+                dest: 'tmp/index.css'
             }
         },
 
@@ -34,18 +48,18 @@ module.exports = function(grunt) {
             prefix_tests: {
                 files: [{
                     expand: true,
-                    src: 'tests/**/*.css' // Overwrite compiled css.
+                    src: 'tmp/*.css' // Overwrite compiled css.
                 }]
             },
         },
 
         watch: {
-            scss: {
+            all: {
                 files: [
-                    'src/**/*.scss',
-                    'tests/**/*.scss'
+                    '**/*.scss',
+                    '**/*.dust'
                 ],
-                tasks: ['default']
+                tasks: ['compile']
             }
         },
 
@@ -55,13 +69,14 @@ module.exports = function(grunt) {
                     hostname: '0.0.0.0',
                     port: 3000,
                     useAvailablePort: true,
-                    base: 'tests/visual',
+                    base: '.',
                 }
             }
         }
     });
 
-    // Default task
-    grunt.registerTask('default', ['sass', 'autoprefixer']);
-    grunt.registerTask('serve', ['default', 'connect:server', 'watch']);
+    // Tasks
+    grunt.registerTask('compile', ['stencil_dust', 'sass', 'autoprefixer']);
+    grunt.registerTask('serve', ['compile', 'connect:server', 'watch']);
+    grunt.registerTask('default', ['serve']);
 };

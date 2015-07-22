@@ -1,0 +1,3 @@
+<div {?id}id="{.}"{/id} class="c-icon {class}" {?role}role="{.}"{/role}>
+    Component stuff goes here!
+</div>
