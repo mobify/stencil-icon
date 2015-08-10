@@ -1,5 +1,4 @@
 <div hidden>{icons|s}</div>
-{@c-iconset path="bower_components/my-iconset/my-spritesheet.svg" /}
 
 <style>
     /* Test-specific fixture styles go here. */
