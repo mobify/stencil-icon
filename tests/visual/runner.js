@@ -52,6 +52,7 @@ define(function(require) {
 
             // Test dynamic icons
             var $cycler = $('#cycler');
+            var $inputter = $('#inputter');
             var icons = ['arrow-up', 'arrow-right', 'arrow-down', 'arrow-left'];
             var cycleCount = 0;
 
@@ -60,6 +61,17 @@ define(function(require) {
                 cycleCount = cycleCount >= 3 ? 0 : cycleCount + 1;
                 $cycler.data('component').name(icons[cycleCount]);
             }, 1000);
+
+            $('#inputter-input').on('keydown', function(e) {
+                if (e.which === 13) {
+                    $('#inputter-button').trigger('click');
+                    this.setSelectionRange(0, this.value.length);
+                }
+            });
+
+            $('#inputter-button').on('click', function() {
+                $inputter.data('component').name($.trim($('#inputter-input').val()));
+            });
         } else {
             console.log(err);
         }

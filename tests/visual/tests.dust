@@ -11,6 +11,20 @@
         width: 50px;
         height: 50px;
     }
+
+    .input-box {
+        display: inline-block;
+        padding-left: 1.5em;
+        vertical-align: middle;
+    }
+
+    .input-box input,
+    .input-box button {
+        box-sizing: border-box;
+        min-height: 40px;
+        padding: 0.25em 0.5em;
+        -webkit-appearance: none;
+    }
 </style>
 
 {@c-spec for="Icon Component" repository=repo}
@@ -31,6 +45,14 @@
     {@c-spec__test describe="Dynamic Icon"}
         {@c-spec__case expect="It should cycle through arrow directions."}
             {@c-icon id="cycler" set="shoppicon" name="arrow-up" dynamic="true" /}
+        {/c-spec__case}
+
+        {@c-spec__case expect="It should be changeable via script."}
+            {@c-icon id="inputter" set="shoppicon" name="info" dynamic="true" /}
+            <span class="input-box">
+                <input id="inputter-input" type="text" value="info" />
+                <button id="inputter-button" type="button">Update</button>
+            </span>
         {/c-spec__case}
     {/c-spec__test}
 {/c-spec}
