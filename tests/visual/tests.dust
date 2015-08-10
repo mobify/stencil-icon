@@ -1,11 +1,36 @@
+<div hidden>{icons|s}</div>
+{@c-iconset path="bower_components/my-iconset/my-spritesheet.svg" /}
+
 <style>
     /* Test-specific fixture styles go here. */
+    .c-icon.c--success {
+        fill: hsl(165, 80%, 40%);
+    }
+
+    .c-icon.c--large {
+        width: 32px;
+        height: 32px;
+    }
 </style>
 
 {@c-spec for="Icon Component" repository=repo}
-    {@c-spec__test describe=".c-icon"}
-        {@c-spec__case expect="Should have feature A"}
-            {@c-icon /}
+    {@c-spec__test describe="Icon"}
+        {@c-spec__case expect="It should render a checkmark 25 × 25px."}
+            {@c-icon set="shoppicon" name="check" /}
+        {/c-spec__case}
+
+        {@c-spec__case expect="It should be colorable via CSS (green)."}
+            {@c-icon class="c--success" set="shoppicon" name="check" /}
+        {/c-spec__case}
+
+        {@c-spec__case expect="It should support different sizes via CSS (32 × 32)."}
+            {@c-icon class="c--large" set="shoppicon" name="check" /}
+        {/c-spec__case}
+    {/c-spec__test}
+
+    {@c-spec__test describe="Dynamic Icon"}
+        {@c-spec__case expect="It should be changeable via script (cycle through arrow directions)."}
+            {@c-icon id="cycler" set="shoppicon" name="arrow-up" dynamic="true" /}
         {/c-spec__case}
     {/c-spec__test}
 {/c-spec}
