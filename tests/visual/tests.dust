@@ -8,8 +8,8 @@
     }
 
     .c-icon.c--large {
-        width: 32px;
-        height: 32px;
+        width: 50px;
+        height: 50px;
     }
 </style>
 
@@ -19,17 +19,17 @@
             {@c-icon set="shoppicon" name="check" /}
         {/c-spec__case}
 
-        {@c-spec__case expect="It should be colorable via CSS (green)."}
+        {@c-spec__case expect="It should ge green."}
             {@c-icon class="c--success" set="shoppicon" name="check" /}
         {/c-spec__case}
 
-        {@c-spec__case expect="It should support different sizes via CSS (32 × 32)."}
+        {@c-spec__case expect="I should render 50 × 50px."}
             {@c-icon class="c--large" set="shoppicon" name="check" /}
         {/c-spec__case}
     {/c-spec__test}
 
     {@c-spec__test describe="Dynamic Icon"}
-        {@c-spec__case expect="It should be changeable via script (cycle through arrow directions)."}
+        {@c-spec__case expect="It should cycle through arrow directions."}
             {@c-icon id="cycler" set="shoppicon" name="arrow-up" dynamic="true" /}
         {/c-spec__case}
     {/c-spec__test}
