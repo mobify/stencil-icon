@@ -1,3 +1,8 @@
-<div {?id}id="{.}"{/id} class="c-icon {class}" {?role}role="{.}"{/role}>
-    Component stuff goes here!
-</div>
+<svg class="c-icon {class}"
+    {?id}id="{id}"{/id}
+    {?title}title="{title}"{/title}
+    {?dynamic}data-adaptivejs-component="stencil-icon"{/dynamic}
+>
+    {?title}<title>{title}</title>{/title}
+    <use xlink:href="#{?set}{set}{:else}icon{/set}-{name}"></use>
+</svg>
