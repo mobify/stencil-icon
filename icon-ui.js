@@ -7,10 +7,6 @@ define(function(require) {
         this.$el = $el;
         this.$use = this.$el.find('use').eq(0);
         this.prefix = this.$use.attr('xlink:href').split('-').shift();
-
-        // Event handlers here.
-
-        // Immediately invoke any methods needed to set up initial state here.
     };
 
     Icon.prototype.name = function(newName) {
