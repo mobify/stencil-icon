@@ -6,14 +6,13 @@ define(function(require) {
         // Component instance properties.
         this.$el = $el;
         this.$use = this.$el.find('use').eq(0);
-        this.prefix = this.$use.attr('xlink:href').split('-').shift();
     };
 
     Icon.prototype.name = function(newName) {
         if (newName === undefined) {
-            return this.$use.attr('xlink:href').replace(this.prefix + '-', '');
+            return this.$use.attr('xlink:href').replace(/^#/, '');
         } else {
-            this.$use.attr('xlink:href', this.prefix + '-' + newName);
+            this.$use.attr('xlink:href', '#' + newName);
         }
     };
 

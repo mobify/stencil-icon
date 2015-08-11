@@ -59,7 +59,7 @@ define(function(require) {
             window.setInterval(function() {
                 // debugger;
                 cycleCount = cycleCount >= 3 ? 0 : cycleCount + 1;
-                $cycler.data('component').name(icons[cycleCount]);
+                $cycler.data('component').name('shoppicon-' + icons[cycleCount]);
             }, 1000);
 
             $('#inputter-input').on('keydown', function(e) {

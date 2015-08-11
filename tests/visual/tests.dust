@@ -29,27 +29,27 @@
 {@c-spec for="Icon Component" repository=repo}
     {@c-spec__test describe="Icon"}
         {@c-spec__case expect="It should render a checkmark 25 × 25px."}
-            {@c-icon set="shoppicon" name="check" /}
+            {@c-icon name="shoppicon-check" /}
         {/c-spec__case}
 
         {@c-spec__case expect="It should ge green."}
-            {@c-icon class="c--success" set="shoppicon" name="check" /}
+            {@c-icon class="c--success" name="shoppicon-check" /}
         {/c-spec__case}
 
         {@c-spec__case expect="I should render 50 × 50px."}
-            {@c-icon class="c--large" set="shoppicon" name="check" /}
+            {@c-icon class="c--large" name="shoppicon-check" /}
         {/c-spec__case}
     {/c-spec__test}
 
     {@c-spec__test describe="Dynamic Icon"}
         {@c-spec__case expect="It should cycle through arrow directions."}
-            {@c-icon id="cycler" set="shoppicon" name="arrow-up" dynamic="true" /}
+            {@c-icon id="cycler" name="shoppicon-arrow-up" dynamic="true" /}
         {/c-spec__case}
 
         {@c-spec__case expect="It should be changeable via script."}
-            {@c-icon id="inputter" set="shoppicon" name="info" dynamic="true" /}
+            {@c-icon id="inputter" name="shoppicon-info" dynamic="true" /}
             <span class="input-box">
-                <input id="inputter-input" type="text" value="info" />
+                <input id="inputter-input" type="text" value="shoppicon-info" />
                 <button id="inputter-button" type="button">Update</button>
             </span>
         {/c-spec__case}
