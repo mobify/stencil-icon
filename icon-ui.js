@@ -21,6 +21,13 @@ define(['$'], function($) {
      */
     return {
         init: function($el, options) {
+            // Recreate jQuery object with correct selector
+            //
+            // TODO: This shouldn’t be needed but is, for Adaptive, even after
+            // this change: https://github.com/mobify/adaptivejs/commit/dcb71b4738c2d59aa79f8e21a978a5a24bc03756
+            //
+            $el = $($el);
+
             // If already initialized, return the instance; otherwise, create it
             // and expose it through jQuery’s data store.
             return $el.data('component') || $el.data('component', new Icon($el, options));
