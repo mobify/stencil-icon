@@ -1,11 +1,57 @@
+<div hidden>{icons|s}</div>
+
 <style>
     /* Test-specific fixture styles go here. */
+    .c-icon.c--success {
+        fill: hsl(165, 80%, 40%);
+    }
+
+    .c-icon.c--large {
+        width: 50px;
+        height: 50px;
+    }
+
+    .input-box {
+        display: inline-block;
+        padding-left: 1.5em;
+        vertical-align: middle;
+    }
+
+    .input-box input,
+    .input-box button {
+        box-sizing: border-box;
+        min-height: 40px;
+        padding: 0.25em 0.5em;
+        -webkit-appearance: none;
+    }
 </style>
 
 {@c-spec for="Icon Component" repository=repo}
-    {@c-spec__test describe=".c-icon"}
-        {@c-spec__case expect="Should have feature A"}
-            {@c-icon /}
+    {@c-spec__test describe="Icon"}
+        {@c-spec__case expect="It should render a checkmark 25 × 25px."}
+            {@c-icon name="shoppicon-check" /}
+        {/c-spec__case}
+
+        {@c-spec__case expect="It should ge green."}
+            {@c-icon class="c--success" name="shoppicon-check" /}
+        {/c-spec__case}
+
+        {@c-spec__case expect="I should render 50 × 50px."}
+            {@c-icon class="c--large" name="shoppicon-check" /}
+        {/c-spec__case}
+    {/c-spec__test}
+
+    {@c-spec__test describe="Dynamic Icon"}
+        {@c-spec__case expect="It should cycle through arrow directions."}
+            {@c-icon id="cycler" name="shoppicon-arrow-up" dynamic="true" /}
+        {/c-spec__case}
+
+        {@c-spec__case expect="It should be changeable via script."}
+            {@c-icon id="inputter" name="shoppicon-info" dynamic="true" /}
+            <span class="input-box">
+                <input id="inputter-input" type="text" value="shoppicon-info" />
+                <button id="inputter-button" type="button">Update</button>
+            </span>
         {/c-spec__case}
     {/c-spec__test}
 {/c-spec}

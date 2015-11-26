@@ -1,3 +1,11 @@
-<div {?id}id="{.}"{/id} class="c-icon {class}" {?role}role="{.}"{/role}>
-    Component stuff goes here!
-</div>
+<svg class="c-icon {class}"
+    {?id}id="{id}"{/id}
+    {?title}title="{title}"{/title}
+    {?dynamic}data-adaptivejs-component="stencil-icon"{/dynamic}
+>
+    {?title}<title>{title}</title>{/title}
+    <use xlink:href="#{name}"></use>
+</svg>
+
+{! Usage in other components will use `default` namespace? !}
+{! {@c-icon name="default-plus" /} !}

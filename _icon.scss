@@ -1,10 +1,10 @@
-// icon
+// Stencil Icon
 // ===
 
 // Configurable Variables
 // ---
 
-$icon__variable-name: true !default;
+$icon__size: 25px !default;
 
 
 // Dependencies
@@ -18,13 +18,14 @@ $icon__variable-name: true !default;
 // ---
 
 .c-icon {
-    // Your component styles go here
-}
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: $icon__size;
+    height: $icon__size;
 
+    fill: currentColor;
 
-// Icon sub-component
-// ---
-
-.c-icon__sub-component {
-    // Your component styles go here
+    color: inherit;
+    vertical-align: middle;
 }
